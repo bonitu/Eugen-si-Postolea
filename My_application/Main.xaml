@@ -1,0 +1,483 @@
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="Main_1"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:s="clr-namespace:System;assembly=mscorlib"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:sd="clr-namespace:System.Data;assembly=System.Data"
+ xmlns:ui="http://schemas.uipath.com/workflow/activities"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Globalization</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Plugin.Workflow</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <ui:OpenBrowser UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Open Browser" Hidden="False" sap2010:WorkflowViewState.IdRef="OpenBrowser_3" NewSession="True" Private="False" Url="https://www.mobile.de/">
+      <ui:OpenBrowser.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="carName" />
+              <Variable x:TypeArguments="x:String" Name="carModel" />
+              <Variable x:TypeArguments="x:Double" Name="price" />
+              <Variable x:TypeArguments="ui:GenericValue" Name="year" />
+              <Variable x:TypeArguments="x:Double" Name="km" />
+              <Variable x:TypeArguments="s:Exception" Name="exceptie" />
+              <Variable x:TypeArguments="s:Exception" Name="modelexception" />
+            </Sequence.Variables>
+            <ui:InputDialog Options="{x:Null}" DisplayName="Car Name" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="What's the car you are looking for?" Title="What's the car you are looking for?">
+              <ui:InputDialog.Result>
+                <OutArgument x:TypeArguments="x:String">[carName]</OutArgument>
+              </ui:InputDialog.Result>
+            </ui:InputDialog>
+            <ui:InputDialog Options="{x:Null}" DisplayName="Car Model" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="Introduce car model" Title="Introduce car model">
+              <ui:InputDialog.Result>
+                <OutArgument x:TypeArguments="x:String">[carModel]</OutArgument>
+              </ui:InputDialog.Result>
+            </ui:InputDialog>
+            <ui:InputDialog Options="{x:Null}" DisplayName="Price" sap2010:WorkflowViewState.IdRef="InputDialog_3" IsPassword="False" Label="Introduce Price" Title="Introduce Price">
+              <ui:InputDialog.Result>
+                <OutArgument x:TypeArguments="x:Double">[price]</OutArgument>
+              </ui:InputDialog.Result>
+            </ui:InputDialog>
+            <ui:InputDialog Options="{x:Null}" DisplayName="Year" sap2010:WorkflowViewState.IdRef="InputDialog_4" IsPassword="False" Label="Introduce car year" Title="Introduce car year">
+              <ui:InputDialog.Result>
+                <OutArgument x:TypeArguments="ui:GenericValue">[year]</OutArgument>
+              </ui:InputDialog.Result>
+            </ui:InputDialog>
+            <ui:InputDialog Options="{x:Null}" DisplayName="Kilometers" sap2010:WorkflowViewState.IdRef="InputDialog_5" IsPassword="False" Label="Introduce Kilometers" Title="Introduce Kilometers">
+              <ui:InputDialog.Result>
+                <OutArgument x:TypeArguments="x:Double">[km]</OutArgument>
+              </ui:InputDialog.Result>
+            </ui:InputDialog>
+            <If Condition="[carName isnot nothing]" sap2010:WorkflowViewState.IdRef="If_3">
+              <If.Then>
+                <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="30" DisplayName="Select Car" sap2010:WorkflowViewState.IdRef="SelectItem_16" Item="[carName]">
+                  <ui:SelectItem.Items>
+                    <scg:List x:TypeArguments="x:String" Capacity="50">
+                      <x:String>Beliebig</x:String>
+                      <x:String>Mercedes-Benz</x:String>
+                      <x:String>Volkswagen</x:String>
+                      <x:String>BMW</x:String>
+                      <x:String>Audi</x:String>
+                      <x:String>Abarth</x:String>
+                      <x:String>AC</x:String>
+                      <x:String>Acura</x:String>
+                      <x:String>Aixam</x:String>
+                      <x:String>Alfa Romeo</x:String>
+                      <x:String>ALPINA</x:String>
+                      <x:String>Artega</x:String>
+                      <x:String>Asia Motors</x:String>
+                      <x:String>Aston Martin</x:String>
+                      <x:String>Audi</x:String>
+                      <x:String>Austin</x:String>
+                      <x:String>Austin Healey</x:String>
+                      <x:String>Bentley</x:String>
+                      <x:String>BMW</x:String>
+                      <x:String>Borgward</x:String>
+                      <x:String>Brilliance</x:String>
+                      <x:String>Bugatti</x:String>
+                      <x:String>Buick</x:String>
+                      <x:String>Cadillac</x:String>
+                      <x:String>Casalini</x:String>
+                      <x:String>Caterham</x:String>
+                      <x:String>Chatenet</x:String>
+                      <x:String>Chevrolet</x:String>
+                      <x:String>Chrysler</x:String>
+                      <x:String>Citroën</x:String>
+                      <x:String>Cobra</x:String>
+                      <x:String>Corvette</x:String>
+                      <x:String>Dacia</x:String>
+                      <x:String>Daewoo</x:String>
+                      <x:String>Daihatsu</x:String>
+                      <x:String>DeTomaso</x:String>
+                      <x:String>Dodge</x:String>
+                      <x:String>Donkervoort</x:String>
+                      <x:String>DS Automobiles</x:String>
+                      <x:String>Ferrari</x:String>
+                      <x:String>Fiat</x:String>
+                      <x:String>Fisker</x:String>
+                      <x:String>Ford</x:String>
+                      <x:String>GAC Gonow</x:String>
+                      <x:String>Gemballa</x:String>
+                      <x:String>GMC</x:String>
+                      <x:String>Grecav</x:String>
+                      <x:String>Hamann</x:String>
+                      <x:String>Holden</x:String>
+                      <x:String>Honda</x:String>
+                    </scg:List>
+                  </ui:SelectItem.Items>
+                  <ui:SelectItem.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="cb11e43019df1f46f78be21a7c9285ed" Selector="&lt;webctrl parentid='qsmm' parentname='searchForm' aaname='Marke  BeliebigMercedes-BenzVolkswagenBMWAudiAbarthACAcuraAixamAlfa RomeoALPINAArtegaAsia MotorsAston MartinAudiAustinAustin HealeyBentleyBMWBorgwardBrillianceBugattiBuickCadillacCasaliniCaterhamChatenetChevroletChryslerCitroënCobraCorvetteDaciaDaewooDaihatsuDeTomasoDodgeDonkervoortDS AutomobilesFerrariFiatFiskerFordGAC GonowGemballaGMCGrecavHamannHoldenHondaHummerHyundaiInfinitiIsuzuIvecoJaguarJeepKiaKoenigseggKTMLadaLamborghiniLanciaLand RoverLandwindLexusLigierLincolnLotusMahindraMaseratiMaybachMazdaMcLarenMercedes-BenzMGMicrocarMINIMitsubishiMorganNissanNSUOldsmobileOpelPaganiPeugeotPiaggioPlymouthPontiacPorscheProtonRenaultRolls-RoyceRoverRufSaabSantanaSeatSkodaSmartspeedARTSpykerSsangyongSubaruSuzukiTalbotTataTECHARTTeslaToyotaTrabantTriumphTVRVolkswagenVolvoWartburgWestfieldWiesmannAndere' idx='2' /&gt;&lt;webctrl id='qsmakeBuy' tag='SELECT' /&gt;" TimeoutMS="1000" WaitForReady="INTERACTIVE" />
+                  </ui:SelectItem.Target>
+                </ui:SelectItem>
+              </If.Then>
+              <If.Else>
+                <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="30" DisplayName="Select Car" sap2010:WorkflowViewState.IdRef="SelectItem_17" Item="[carName.ToUpper]">
+                  <ui:SelectItem.Items>
+                    <scg:List x:TypeArguments="x:String" Capacity="50">
+                      <x:String>Beliebig</x:String>
+                      <x:String>Mercedes-Benz</x:String>
+                      <x:String>Volkswagen</x:String>
+                      <x:String>BMW</x:String>
+                      <x:String>Audi</x:String>
+                      <x:String>Abarth</x:String>
+                      <x:String>AC</x:String>
+                      <x:String>Acura</x:String>
+                      <x:String>Aixam</x:String>
+                      <x:String>Alfa Romeo</x:String>
+                      <x:String>ALPINA</x:String>
+                      <x:String>Artega</x:String>
+                      <x:String>Asia Motors</x:String>
+                      <x:String>Aston Martin</x:String>
+                      <x:String>Audi</x:String>
+                      <x:String>Austin</x:String>
+                      <x:String>Austin Healey</x:String>
+                      <x:String>Bentley</x:String>
+                      <x:String>BMW</x:String>
+                      <x:String>Borgward</x:String>
+                      <x:String>Brilliance</x:String>
+                      <x:String>Bugatti</x:String>
+                      <x:String>Buick</x:String>
+                      <x:String>Cadillac</x:String>
+                      <x:String>Casalini</x:String>
+                      <x:String>Caterham</x:String>
+                      <x:String>Chatenet</x:String>
+                      <x:String>Chevrolet</x:String>
+                      <x:String>Chrysler</x:String>
+                      <x:String>Citroën</x:String>
+                      <x:String>Cobra</x:String>
+                      <x:String>Corvette</x:String>
+                      <x:String>Dacia</x:String>
+                      <x:String>Daewoo</x:String>
+                      <x:String>Daihatsu</x:String>
+                      <x:String>DeTomaso</x:String>
+                      <x:String>Dodge</x:String>
+                      <x:String>Donkervoort</x:String>
+                      <x:String>DS Automobiles</x:String>
+                      <x:String>Ferrari</x:String>
+                      <x:String>Fiat</x:String>
+                      <x:String>Fisker</x:String>
+                      <x:String>Ford</x:String>
+                      <x:String>GAC Gonow</x:String>
+                      <x:String>Gemballa</x:String>
+                      <x:String>GMC</x:String>
+                      <x:String>Grecav</x:String>
+                      <x:String>Hamann</x:String>
+                      <x:String>Holden</x:String>
+                      <x:String>Honda</x:String>
+                    </scg:List>
+                  </ui:SelectItem.Items>
+                  <ui:SelectItem.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="cb11e43019df1f46f78be21a7c9285ed" Selector="&lt;webctrl parentid='qsmm' parentname='searchForm' aaname='Marke  BeliebigMercedes-BenzVolkswagenBMWAudiAbarthACAcuraAixamAlfa RomeoALPINAArtegaAsia MotorsAston MartinAudiAustinAustin HealeyBentleyBMWBorgwardBrillianceBugattiBuickCadillacCasaliniCaterhamChatenetChevroletChryslerCitroënCobraCorvetteDaciaDaewooDaihatsuDeTomasoDodgeDonkervoortDS AutomobilesFerrariFiatFiskerFordGAC GonowGemballaGMCGrecavHamannHoldenHondaHummerHyundaiInfinitiIsuzuIvecoJaguarJeepKiaKoenigseggKTMLadaLamborghiniLanciaLand RoverLandwindLexusLigierLincolnLotusMahindraMaseratiMaybachMazdaMcLarenMercedes-BenzMGMicrocarMINIMitsubishiMorganNissanNSUOldsmobileOpelPaganiPeugeotPiaggioPlymouthPontiacPorscheProtonRenaultRolls-RoyceRoverRufSaabSantanaSeatSkodaSmartspeedARTSpykerSsangyongSubaruSuzukiTalbotTataTECHARTTeslaToyotaTrabantTriumphTVRVolkswagenVolvoWartburgWestfieldWiesmannAndere' idx='2' /&gt;&lt;webctrl id='qsmakeBuy' tag='SELECT' /&gt;" TimeoutMS="1000" WaitForReady="INTERACTIVE" />
+                  </ui:SelectItem.Target>
+                </ui:SelectItem>
+              </If.Else>
+            </If>
+            <If Condition="[carModel isnot nothing]" sap2010:WorkflowViewState.IdRef="If_4">
+              <If.Then>
+                <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Model" sap2010:WorkflowViewState.IdRef="SelectItem_5" Item="[carModel]">
+                  <ui:SelectItem.Items>
+                    <scg:List x:TypeArguments="x:String" Capacity="0" />
+                  </ui:SelectItem.Items>
+                  <ui:SelectItem.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="684d96aa6feaf5d7d8121113aeee5fe6" Selector="&lt;webctrl id='qsmodelBuy' tag='SELECT' /&gt;" TimeoutMS="1000" WaitForReady="COMPLETE" />
+                  </ui:SelectItem.Target>
+                </ui:SelectItem>
+              </If.Then>
+              <If.Else>
+                <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Model" sap2010:WorkflowViewState.IdRef="SelectItem_18" Item="[&quot;    &quot;+carModel]">
+                  <ui:SelectItem.Items>
+                    <scg:List x:TypeArguments="x:String" Capacity="0" />
+                  </ui:SelectItem.Items>
+                  <ui:SelectItem.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="684d96aa6feaf5d7d8121113aeee5fe6" Selector="&lt;webctrl id='qsmodelBuy' tag='SELECT' /&gt;" TimeoutMS="1000" WaitForReady="COMPLETE" />
+                  </ui:SelectItem.Target>
+                </ui:SelectItem>
+              </If.Else>
+            </If>
+            <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Price" sap2010:WorkflowViewState.IdRef="SelectItem_8" Item="[price.ToString(&quot;0,0&quot;,new CultureInfo(&quot;el-GR&quot;))+&quot; €&quot;]">
+              <ui:SelectItem.Items>
+                <scg:List x:TypeArguments="x:String" Capacity="64">
+                  <x:String>Beliebig</x:String>
+                  <x:String>500 €</x:String>
+                  <x:String>1.000 €</x:String>
+                  <x:String>1.500 €</x:String>
+                  <x:String>2.000 €</x:String>
+                  <x:String>2.500 €</x:String>
+                  <x:String>3.000 €</x:String>
+                  <x:String>3.500 €</x:String>
+                  <x:String>4.000 €</x:String>
+                  <x:String>4.500 €</x:String>
+                  <x:String>5.000 €</x:String>
+                  <x:String>6.000 €</x:String>
+                  <x:String>7.000 €</x:String>
+                  <x:String>8.000 €</x:String>
+                  <x:String>9.000 €</x:String>
+                  <x:String>10.000 €</x:String>
+                  <x:String>11.000 €</x:String>
+                  <x:String>12.000 €</x:String>
+                  <x:String>13.000 €</x:String>
+                  <x:String>14.000 €</x:String>
+                  <x:String>15.000 €</x:String>
+                  <x:String>17.500 €</x:String>
+                  <x:String>20.000 €</x:String>
+                  <x:String>22.500 €</x:String>
+                  <x:String>25.000 €</x:String>
+                  <x:String>27.500 €</x:String>
+                  <x:String>30.000 €</x:String>
+                  <x:String>35.000 €</x:String>
+                  <x:String>40.000 €</x:String>
+                  <x:String>45.000 €</x:String>
+                  <x:String>50.000 €</x:String>
+                  <x:String>55.000 €</x:String>
+                  <x:String>60.000 €</x:String>
+                  <x:String>70.000 €</x:String>
+                  <x:String>80.000 €</x:String>
+                  <x:String>90.000 €</x:String>
+                </scg:List>
+              </ui:SelectItem.Items>
+              <ui:SelectItem.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="d49396277c8de73216a68e2532a157c7" Selector="&lt;webctrl parentname='searchForm' aaname='    Beliebig500 €1.000 €1.500 €2.000 €2.500 €3.000 €3.500 €4.000 €4.500 €5.000 €6.000 €7.000 €8.000 €9.000 €10.000 €11.000 €12.000 €13.000 €14.000 €15.000 €17.500 €20.000 €22.500 €25.000 €27.500 €30.000 €35.000 €40.000 €45.000 €50.000 €55.000 €60.000 €70.000 €80.000 €90.000 €' /&gt;&lt;webctrl parentid='qsprcwrp' tag='SELECT' /&gt;" WaitForReady="COMPLETE" />
+              </ui:SelectItem.Target>
+            </ui:SelectItem>
+            <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Year" sap2010:WorkflowViewState.IdRef="SelectItem_9" Item="[year]">
+              <ui:SelectItem.Items>
+                <scg:List x:TypeArguments="x:String" Capacity="64">
+                  <x:String>Beliebig</x:String>
+                  <x:String>2019</x:String>
+                  <x:String>2018</x:String>
+                  <x:String>2017</x:String>
+                  <x:String>2016</x:String>
+                  <x:String>2015</x:String>
+                  <x:String>2014</x:String>
+                  <x:String>2013</x:String>
+                  <x:String>2012</x:String>
+                  <x:String>2011</x:String>
+                  <x:String>2010</x:String>
+                  <x:String>2009</x:String>
+                  <x:String>2008</x:String>
+                  <x:String>2007</x:String>
+                  <x:String>2006</x:String>
+                  <x:String>2005</x:String>
+                  <x:String>2004</x:String>
+                  <x:String>2003</x:String>
+                  <x:String>2002</x:String>
+                  <x:String>2001</x:String>
+                  <x:String>2000</x:String>
+                  <x:String>1999</x:String>
+                  <x:String>1998</x:String>
+                  <x:String>1997</x:String>
+                  <x:String>1996</x:String>
+                  <x:String>1995</x:String>
+                  <x:String>1994</x:String>
+                  <x:String>1993</x:String>
+                  <x:String>1992</x:String>
+                  <x:String>1991</x:String>
+                  <x:String>1990</x:String>
+                  <x:String>1985</x:String>
+                  <x:String>1980</x:String>
+                  <x:String>1975</x:String>
+                  <x:String>1970</x:String>
+                  <x:String>1965</x:String>
+                  <x:String>1960</x:String>
+                  <x:String>1900</x:String>
+                </scg:List>
+              </ui:SelectItem.Items>
+              <ui:SelectItem.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="47eb4f08afd73507a94590dafdcacc34" Selector="&lt;webctrl parentname='searchForm' aaname='Beliebig    Beliebig2019201820172016201520142013201220112010200920082007200620052004200320022001200019991998199719961995199419931992199119901985198019751970196519601900' /&gt;&lt;webctrl parentid='qsfrgwrp' tag='SELECT' /&gt;" WaitForReady="INTERACTIVE" />
+              </ui:SelectItem.Target>
+            </ui:SelectItem>
+            <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT'" sap2010:WorkflowViewState.IdRef="SelectItem_10" Item="[km.ToString(&quot;0,0&quot;,new CultureInfo(&quot;el-GR&quot;))+&quot; km&quot;]">
+              <ui:SelectItem.Items>
+                <scg:List x:TypeArguments="x:String" Capacity="16">
+                  <x:String>Beliebig</x:String>
+                  <x:String>5.000 km</x:String>
+                  <x:String>10.000 km</x:String>
+                  <x:String>20.000 km</x:String>
+                  <x:String>30.000 km</x:String>
+                  <x:String>40.000 km</x:String>
+                  <x:String>50.000 km</x:String>
+                  <x:String>60.000 km</x:String>
+                  <x:String>70.000 km</x:String>
+                  <x:String>80.000 km</x:String>
+                  <x:String>90.000 km</x:String>
+                  <x:String>100.000 km</x:String>
+                  <x:String>125.000 km</x:String>
+                  <x:String>150.000 km</x:String>
+                  <x:String>200.000 km</x:String>
+                </scg:List>
+              </ui:SelectItem.Items>
+              <ui:SelectItem.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="eb9ce28dfc5a3210d98d482092ee1ecd" Selector="&lt;webctrl parentname='searchForm' aaname='Beliebig    Beliebig5.000 km10.000 km20.000 km30.000 km40.000 km50.000 km60.000 km70.000 km80.000 km90.000 km100.000 km125.000 km150.000 km200.000 km' /&gt;&lt;webctrl parentid='qsmilwrp' tag='SELECT' /&gt;" WaitForReady="INTERACTIVE" />
+              </ui:SelectItem.Target>
+            </ui:SelectItem>
+            <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON  qssub'" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition OffsetX="138" OffsetY="32" Position="TopLeft" />
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="44fa7e87767c551dd6b6651063c6b8a9" Selector="&lt;webctrl aaname='Angebote*' parentid='qs' parentname='searchForm' tag='DIV' parentclass='qs-submit qs-submit--buy g-row' /&gt;&lt;webctrl tag='BUTTON' /&gt;" WaitForReady="COMPLETE" />
+              </ui:Click.Target>
+            </ui:Click>
+          </Sequence>
+        </ActivityAction>
+      </ui:OpenBrowser.Body>
+    </ui:OpenBrowser>
+    <Sequence DisplayName="Data Scraping" sap2010:WorkflowViewState.IdRef="Sequence_25">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
+      </Sequence.Variables>
+      <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Attach Browser 'AudiA3Ang Page'" sap2010:WorkflowViewState.IdRef="BrowserScope_7" InformativeScreenshot="4e2cebae32b1ce421193392aef249399" Selector="&lt;html title='*' /&gt;">
+        <ui:BrowserScope.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_24">
+              <ui:ExtractData ContinueOnError="True" DataTable="[ExtractDataTable]" DelayBetweenPagesMS="300" DisplayName="Extract Structured Data 'BODY  z1234'" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl class='viewport' idx='1' tag='div' /&gt;&lt;webctrl idx='1' tag='div' /&gt;&lt;webctrl idx='3' tag='div' /&gt;&lt;webctrl class='g-row' idx='4' tag='div' /&gt;&lt;webctrl class='g-col-9' idx='1' tag='div' /&gt;&lt;webctrl class='cBox cBox--content cBox--resultList' idx='2' tag='div' /&gt;&lt;webctrl class='cBox-body cBox-body--resultitem fsboAd rbt-reg rbt-no-top' tag='div' /&gt;&lt;webctrl class='g-row' idx='1' tag='div' /&gt;&lt;webctrl class='g-col-9' idx='1' tag='div' /&gt;&lt;webctrl class='g-row' idx='1' tag='div' /&gt;&lt;/row&gt;&lt;column exact='1' name2='URL' attr2='href' attr='text' name='CarName'&gt;&lt;webctrl class='viewport' idx='1' tag='div' /&gt;&lt;webctrl idx='1' tag='div' /&gt;&lt;webctrl idx='3' tag='div' /&gt;&lt;webctrl class='g-row' idx='4' tag='div' /&gt;&lt;webctrl class='g-col-9' idx='1' tag='div' /&gt;&lt;webctrl class='cBox cBox--content cBox--resultList' idx='2' tag='div' /&gt;&lt;webctrl class='cBox-body cBox-body--resultitem fsboAd rbt-reg rbt-no-top' tag='div' /&gt;&lt;webctrl class='g-row' idx='1' tag='div' /&gt;&lt;webctrl class='g-col-9' idx='1' tag='div' /&gt;&lt;webctrl class='g-row' idx='1' tag='div' /&gt;&lt;webctrl class='link--muted no--text--decoration result-item' idx='1' tag='a' /&gt;&lt;webctrl class='g-col-8' idx='1' tag='div' /&gt;&lt;/column&gt;&lt;column exact='1' attr='text' name='Price'&gt;&lt;webctrl class='viewport' idx='1' tag='div' /&gt;&lt;webctrl idx='1' tag='div' /&gt;&lt;webctrl idx='3' tag='div' /&gt;&lt;webctrl class='g-row' idx='4' tag='div' /&gt;&lt;webctrl class='g-col-9' idx='1' tag='div' /&gt;&lt;webctrl class='cBox cBox--content cBox--resultList' idx='2' tag='div' /&gt;&lt;webctrl class='cBox-body cBox-body--resultitem fsboAd rbt-reg rbt-no-top' tag='div' /&gt;&lt;webctrl class='g-row' idx='1' tag='div' /&gt;&lt;webctrl class='g-col-9' idx='1' tag='div' /&gt;&lt;webctrl class='g-row' idx='1' tag='div' /&gt;&lt;webctrl class='g-col-4' idx='1' tag='div' /&gt;&lt;webctrl class='price-block u-margin-bottom-9' idx='1' tag='div' /&gt;&lt;webctrl class='link--muted no--text--decoration result-item' idx='1' tag='a' /&gt;&lt;webctrl class='h3 u-block' idx='1' tag='span' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap2010:WorkflowViewState.IdRef="ExtractData_7" MaxNumberOfResults="100" NextLinkSelector="&lt;webctrl aaname='Weitere Angebote' parentid='z1234' tag='SPAN' /&gt;">
+                <ui:ExtractData.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="e2b4a37f7c9a93dee5be6d3496a702ef" Selector="&lt;webctrl omit:id='z1234' tag='BODY' /&gt;" WaitForReady="COMPLETE" />
+                </ui:ExtractData.Target>
+              </ui:ExtractData>
+              <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_6" WorkbookPath="masini.xlsx">
+                <ui:ExcelApplicationScope.Body>
+                  <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                      <ui:ExcelWriteRange AddHeaders="True" DataTable="[ExtractDataTable]" DisplayName="Write Range" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_6" SheetName="Sheet1">
+                        <ui:ExcelWriteRange.StartingCell>
+                          <InArgument x:TypeArguments="x:String">
+                            <Literal x:TypeArguments="x:String" Value="" />
+                          </InArgument>
+                        </ui:ExcelWriteRange.StartingCell>
+                      </ui:ExcelWriteRange>
+                    </Sequence>
+                  </ActivityAction>
+                </ui:ExcelApplicationScope.Body>
+              </ui:ExcelApplicationScope>
+            </Sequence>
+          </ActivityAction>
+        </ui:BrowserScope.Body>
+      </ui:BrowserScope>
+    </Sequence>
+    <sads:DebugSymbol.Symbol>dz5DOlxVc2Vyc1xib2dkYW4ubml0dVxEb2N1bWVudHNcVWlQYXRoXE15X2FwcGxpY2F0aW9uXE1haW4ueGFtbE9CA6YDDgIBAUMF/QIWAgEY/gIFpAMQAgECQ7sBQ9MBAgFcSQv6AhYCARmAAzqAA1cCAQOCAwejAxkCAQRTDVceAgFXWA1cHgIBUl0NYR4CAU1iDWYeAgFIZw1rHgIBQ2wN5wESAgE06AEN/QESAgEn/gENqgIdAgEkqwIN2QIdAgEh2gIN8QIdAgEe8gIN+QIYAgEaggOeAoIDuAICAReIAw2gAxgCAQVTkAFTtQECAVtVOVVCAgFZU7wBU+EBAgFYWJEBWKYBAgFWWjlaQwIBVFitAVjCAQIBU12NAV2eAQIBUV85X0ACAU9dpQFdtgECAU5ijAFioAECAUxkQGRGAgFKYqcBYrsBAgFJZ5IBZ6gBAgFHaTlpPQIBRWevAWfFAQIBRGwbbDQCATVuEagBIQIBPasBEeUBIQIBN+gBG+gBNQIBKOoBEfEBIQIBL/QBEfsBIQIBKv4BswH+AYgCAgElqAKgAagCmwQCASarArIBqwK6AQIBItcCoAHXAq8DAgEj2gK8AdoCjwICAR/vAqAB7wKcAwIBIPcCoAH3AsECAgEd9AI69AI+AgEc9AIs9AIxAgEbiQMPjQMgAgEOjgMPnwMqAgEGbl1uYQIBQG6wAW67AQIBPqYBjwGmAa8IAgFCpgG6CKYBwAgCAUGrAV2rAWECATqrAbABqwHDAQIBOOMBjwHjAa8IAgE84wG6COMBwAgCATvqAbcB6gHDAQIBMO8BjwHvAb8BAgEz7wHKAe8B0AECATL0AbgB9AHVAQIBK/kBjwH5Ab8BAgEu+QHKAfkB0AECAS2JA8MTiQPIEwIBFosDogGLA9ABAgEViQNpiQNuAgEUiQMviQM1AgETiQNAiQNUAgERiQPaE4kDoxQCARCJA7MBiQP/EgIBD44DqgGOA7cBAgENlAMVnAMgAgEHlQMXmwMsAgEImAMdmANMAgEMlQNHlQNbAgEKlQO0AZUDvAECAQk=</sads:DebugSymbol.Symbol>
+  </Sequence>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="InputDialog_1" sap:VirtualizedContainerService.HintSize="654,92" />
+      <sap2010:ViewStateData Id="InputDialog_2" sap:VirtualizedContainerService.HintSize="654,92" />
+      <sap2010:ViewStateData Id="InputDialog_3" sap:VirtualizedContainerService.HintSize="654,92" />
+      <sap2010:ViewStateData Id="InputDialog_4" sap:VirtualizedContainerService.HintSize="654,92" />
+      <sap2010:ViewStateData Id="InputDialog_5" sap:VirtualizedContainerService.HintSize="654,92" />
+      <sap2010:ViewStateData Id="SelectItem_16" sap:VirtualizedContainerService.HintSize="314,134" />
+      <sap2010:ViewStateData Id="SelectItem_17" sap:VirtualizedContainerService.HintSize="314,134" />
+      <sap2010:ViewStateData Id="If_3" sap:VirtualizedContainerService.HintSize="654,284.666666666667" />
+      <sap2010:ViewStateData Id="SelectItem_5" sap:VirtualizedContainerService.HintSize="314,134" />
+      <sap2010:ViewStateData Id="SelectItem_18" sap:VirtualizedContainerService.HintSize="314,134" />
+      <sap2010:ViewStateData Id="If_4" sap:VirtualizedContainerService.HintSize="654,284.666666666667" />
+      <sap2010:ViewStateData Id="SelectItem_8" sap:VirtualizedContainerService.HintSize="654,134" />
+      <sap2010:ViewStateData Id="SelectItem_9" sap:VirtualizedContainerService.HintSize="654,134" />
+      <sap2010:ViewStateData Id="SelectItem_10" sap:VirtualizedContainerService.HintSize="654,134" />
+      <sap2010:ViewStateData Id="Click_2" sap:VirtualizedContainerService.HintSize="654,106" />
+      <sap2010:ViewStateData Id="Sequence_6" sap:VirtualizedContainerService.HintSize="676,2061.33333333333">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="OpenBrowser_3" sap:VirtualizedContainerService.HintSize="690,2160" />
+      <sap2010:ViewStateData Id="ExtractData_7" sap:VirtualizedContainerService.HintSize="414,106" />
+      <sap2010:ViewStateData Id="ExcelWriteRange_6" sap:VirtualizedContainerService.HintSize="314,86.6666666666667" />
+      <sap2010:ViewStateData Id="Sequence_26" sap:VirtualizedContainerService.HintSize="336,210.666666666667">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="ExcelApplicationScope_6" sap:VirtualizedContainerService.HintSize="414,319.333333333333" />
+      <sap2010:ViewStateData Id="Sequence_24" sap:VirtualizedContainerService.HintSize="436,589.333333333333">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="BrowserScope_7" sap:VirtualizedContainerService.HintSize="450,735.333333333333" />
+      <sap2010:ViewStateData Id="Sequence_25" sap:VirtualizedContainerService.HintSize="690,859.333333333333">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="712,3183.33333333333">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Main_1" sap:VirtualizedContainerService.HintSize="752,3303.33333333333" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</Activity>
